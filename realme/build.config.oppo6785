@@ -3,6 +3,12 @@
 . "${ROOT_DIR}"/build-configs/kernel-4.14/build.config.common.clang.aarch64
 KERNEL_DIR=private/mediatek-realme-oppo6785-4.14
 DEFCONFIG=oppo6785_defconfig
+BUILD_DTBO_IMG=1
+MKDTIMG_DTBOS="
+arch/arm64/boot/dts/mediatek/oppo6785_19661.dtbo
+arch/arm64/boot/dts/mediatek/oppo6785_20682.dtbo
+arch/arm64/boot/dts/mediatek/oppo6785_20684.dtbo
+"
 FILES="
 .config
 System.map
@@ -12,8 +18,6 @@ arch/arm64/boot/Image.gz-dtb
 arch/arm64/boot/Image.lz4
 arch/arm64/boot/Image.lz4-dtb
 arch/arm64/boot/dts/mediatek/mt6785.dtb
-arch/arm64/boot/dts/mediatek/oppo6785_19661.dtbo
-arch/arm64/boot/dts/mediatek/oppo6785_20682.dtbo
-arch/arm64/boot/dts/mediatek/oppo6785_20684.dtbo
+${MKDTIMG_DTBOS}
 vmlinux
 "
