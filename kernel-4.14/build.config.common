@@ -1,5 +1,5 @@
 #!/hint/bash
-BUILDTOOLS_PREBUILT_BIN=build/build-tools/path/linux-x86
+BUILDTOOLS_PREBUILT_BIN=build/kernel/build-tools/path/linux-x86
 HERMETIC_TOOLCHAIN="${HERMETIC_TOOLCHAIN:-1}"
 ADDITIONAL_HOST_TOOLS="flock ld"
 UNSTRIPPED_MODULES="*.ko"
