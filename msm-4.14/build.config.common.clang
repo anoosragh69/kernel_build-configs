@@ -1,0 +1,6 @@
+#!/hint/bash
+CLANG_PREBUILT_BIN=prebuilts-master/clang/host/linux-x86/clang-r522817/bin
+LD_LIBRARY_PATH="${ROOT_DIR}"/prebuilts-master/clang/host/linux-x86/clang-r522817/lib64"${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+export LD_LIBRARY_PATH
+LD=ld.lld
+LLVM=1

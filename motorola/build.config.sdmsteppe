@@ -1,0 +1,29 @@
+#!/hint/bash
+. "${ROOT_DIR}"/build-configs/msm-4.14/build.config.common.aarch64
+. "${ROOT_DIR}"/build-configs/msm-4.14/build.config.common.clang.aarch64
+KERNEL_DIR=private/msm-moto-sdmsteppe-4.14
+DEFCONFIG="
+vendor/sdmsteppe-perf_defconfig
+vendor/ext_config/moto-sdmsteppe.config
+vendor/ext_config/moto-sdmmagpie-hanoip.config
+vendor/debugfs.config
+vendor/ext_config/lineage-moto-sdmsteppe.config
+"
+BUILD_DTBO_IMG=1
+MKDTIMG_DTBOS="
+arch/arm64/boot/dts/qcom/sdmmagpie-hanoip-dvt1-overlay.dtbo
+arch/arm64/boot/dts/qcom/sdmmagpie-hanoip-dvt2-overlay.dtbo
+arch/arm64/boot/dts/qcom/sdmmagpie-hanoip-evt1-overlay.dtbo
+"
+FILES="
+.config
+System.map
+arch/arm64/boot/Image
+arch/arm64/boot/Image.gz
+arch/arm64/boot/Image.gz-dtb
+arch/arm64/boot/Image.lz4
+arch/arm64/boot/Image.lz4-dtb
+arch/arm64/boot/dts/qcom/sdmmagpie-hanoi-base.dtb
+${MKDTIMG_DTBOS}
+vmlinux
+"
